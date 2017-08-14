@@ -51,4 +51,3 @@ amportal chown;
 rm -rf tpl ;
 #190 - Echo LISTO
 echo "XONE CONNECT INSTALADO";
-

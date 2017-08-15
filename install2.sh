@@ -50,6 +50,7 @@ rm -rf tpl ;
 #185 sed apache
 sed -i 's/None/All/g' /etc/httpd/conf/httpd.conf
 #186 php datetime
+sed -i 's/date\.timezone.*$//g' /etc/php.ini
 sed -i 's/date\.timezone/date.timezone\ndate.timezone\ =\ America\/Guayaquil/g' /etc/php.ini
 #190 - Echo LISTO
 echo "XONE CONNECT INSTALADO";

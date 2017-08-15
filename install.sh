@@ -1,7 +1,7 @@
 #!/bin/bash
 #0. Instalar ISSABEL
 yum -y install wget git;
-wget -O - http://repo.issabel.org/issabel4-netinstall.sh | bash;
+wget -O - https://github.com/jacr6/bin/raw/master/issabel4-netinstall.sh | bash;
 #10. Situarse en /var/www/html/
 cd /var/www/html/;
 #20. clonar xone-connect en xone/

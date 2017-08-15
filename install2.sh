@@ -4,13 +4,14 @@ cd /var/www/html/;
 #20. clonar xone-connect en xone/
 git clone https://jacr70@bitbucket.org/tradesystem/xone-connect.git;
 #21 renombrar a xone
-mv xone-connect xone;
+mv /var/www/html/xone-connect /var/www/html/xone;
 #30. clonar yii v1 yii
 git clone https://github.com/yiisoft/yii.git;
 #40. crear en /var/www/html/xone assets chmod 777
 mkdir  -p /var/www/html/xone/assets&& chmod -R 777  /var/www/html/xone/assets;
 #50. crear en /var/www/html/xone/protected runtime 777
- chmod -R 777  /var/www/html/xone/protected;
+chmod -R 777  /var/www/html/xone/protected;
+mkdir  /var/www/html/xone/protected/runtime;
 #60. ejecutar script sql /var/www/html/xone/protected/data/xone_dump_prueba.sql
 mysql -p < /var/www/html/xone/protected/data/sprint\ 1/estructura/xone_20160926.sql ;
 mysql -p <  /var/www/html/xone/protected/data/sprint\ 1/data/xone_20160926.sql ; 
@@ -46,5 +47,9 @@ cp tpl/contentFreePBX.php /var/www/html/modules/pbxadmin/libs/contentFreePBX.php
 amportal chown;
 #180 - borrar tpl
 rm -rf tpl ;
+#185 sed apache
+sed -i 's/None/All/g' /etc/httpd/conf/httpd.conf
+#186 php datetime
+sed -i 's/date\.timezone/date.timezone\ndate.timezone=America\/Guayaquil/g' /etc/php.ini
 #190 - Echo LISTO
 echo "XONE CONNECT INSTALADO";
